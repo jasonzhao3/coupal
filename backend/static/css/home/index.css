@@ -12,30 +12,47 @@ video {
   width:auto;
   height:auto;
   z-index:-100;
-  background:url('static/images/polina.jpg') no-repeat;
+  background:url('/static/images/background.png') no-repeat;
   background-size:cover;
 }
+.video-dark-layer {
+  height:100vh;
+  background: rgba(0,0,0,0.55);
+}
 
-div {
+.dark-layer {
   font-family:Agenda-Light,Agenda Light,Agenda,Arial Narrow,sans-serif;
   font-weight:100;
-  background:rgba(0,0,0,0.3);
+  background:rgba(0,0,0,0.2);
   color:white;
   padding:2rem;
   width:33%;
   margin:2rem;
+  margin-top:5rem;
   float:right;
-  font-size:1.2rem;
+  font-size:1.5rem;
 }
+.contact {
+  margin-top:3rem;
+  color: #E6E600;
+}
+
 p {
+  padding-top: 5rem;
   color: white;
+  font-size: 1.7rem;
+
 }
 
 h1{
-  font-size:3rem;
+  font-size:6rem;
   text-transform:uppercase;
   margin-top:0;
   letter-spacing:.3rem;
+}
+
+h2 {
+  font-size: 2.8rem;
 }
 
 a{
@@ -57,7 +74,7 @@ a:hover{
 
 @media screen and (max-device-width: 800px) {
   html{
-    background:url("static/images/polina.jpg") #000 no-repeat center center fixed;
+    background:url("/static/images/background.png") #000 no-repeat center center fixed;
   }
 
   #bgvid{display:none;}

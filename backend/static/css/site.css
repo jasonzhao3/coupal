@@ -115,3 +115,11 @@ li, ul {
   top: 65%;
   cursor: pointer;
 }
+
+#footer {
+  margin-top:95vh;
+  width: 10%;
+  margin-right: -32%;
+  float: right;
+  color: white;
+}
