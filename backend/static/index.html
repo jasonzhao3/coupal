@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title><%= content_for?(:title) ? yield(:title) : "Footsteps" %></title>
-    <%= csrf_meta_tags %>
+    <title>Coupal</title>
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="68u14MJZzJWtCSxyBEJKZW8QWcygWqXDpUp/lk0kKbM=" name="csrf-token" />
   
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
     <![endif]-->
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= yield :stylesheet_links%>
+    <link href="/static/css/bootstrap.min.css" media="all" rel="stylesheet" />
+    <link href="/static/css/site.css" media="all" rel="stylesheet" />
+    <link href="/static/css/home/index.css" media="screen" rel="stylesheet" />
 
     <!--open sans font-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-    <!-- For all other devices -->
-    <!-- Size should be 32 x 32 pixels -->
-    <%= favicon_link_tag 'foot.png', :rel => 'shortcut icon' %>
-    <%= javascript_include_tag "application" %>
+    <script src="/static/js/jquery-1.11.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="68u14MJZzJWtCSxyBEJKZW8QWcygWqXDpUp/lk0kKbM=" name="csrf-token" />
 
-
-    <%= csrf_meta_tag %>
     <!-- Google Fonts embed code -->
     <script type="text/javascript">
         (function() {
@@ -40,248 +40,29 @@
         })();
     </script>    
   </head>
-  <body>
-
-    <!-- <div class='body-page-heading'><h1>Footsteps</h1></div> -->
-
-    <!-- fixed top header -->
-    <div class="navbar navbar-default navbar-fixed-top main-menu" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toogle Navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <%=link_to "", root_path, :class=>"navbar-brand" %>
-        </div> <!-- navbar-header -->
-        
-        <div class="navbar-collapse collapsed">  
-          <ul class="nav navbar-nav navbar-right">
-            <li id="nav-home"> <%= link_to "Home", root_path %></li>
-            <% if !session[:therapist].nil? || !session[:user].nil? %>
-              <!--<li id="nav-protocol"><%= link_to "Protocols", protocols_path %></li>-->
-              <li id="nav-exercise"><%= link_to "Exercises", exercises_path  %></li>
-              <li id="nav-patient"><%= link_to "Patients", users_path  %></li>
-              <li id="nav-help"><%= link_to "Help", help_path  %></li>
-              <li id="nav-logout"><%= link_to "Logout", logout_therapists_path %></li>
-            <% else %>
-              <li id="nav-exercise"><%= link_to "Product", root_path(:anchor=>'product')  %></li>
-              <li id="nav-patient"><%= link_to "Connect", root_path(:anchor => 'social')  %></li>
-              <li id="nav-patient"><%= link_to "Signup", root_path(:anchor => 'signup')  %></li>
-              <li id="nav-login"><%= link_to "Login", login_therapists_path %></li>
-            <% end %>
-          </ul>
-
-        </div> <!-- navbar-collapse -->
-      </div> <!-- container -->
-    </div> <!-- navbar-fixed-top -->
-
-
-
   
-<div id="homeCarousel" class="carousel slide home-carousel" data-interval="6000" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#homeCarousel" data-slide-to="1"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="item slide1 active">
-      <%= image_tag("home_background.png", :class => "img-responsive home-slider-slide-one", :alt => "Footsteps Intro") %>
-      <div class="carousel-caption">
-        <h3>Motivating physical therapy patients to move further, one step at a time.</h3>
+  <body>
+    <video autoplay loop poster="/static/images/background.png" id="bgvid">
+    <!-- <source src="/static/videos/polina.webm" type="video/webm"> -->
+    <source src="/static/videos/night_light2.mp4" type="video/mp4">
+    </video>
 
-        <div><%= link_to "Learn More", '#promotion', :class => "btn btn-info btn-lg learn-more-button" %></div>
-      </div>
-      <!-- carousel-caption -->
+    <div id="polina">
+      <h1>Coupal</h1>
+      <p>filmed by Alexander Wagner 2011
+      <p><a href="/blog/777/Create-Fullscreen-HTML5-Page-Background-Video">return to article</a>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porta dictum turpis, eu mollis justo gravida ac. Proin non eros blandit, rutrum est a, cursus quam. Nam ultricies, velit ac suscipit vehicula, turpis eros sollicitudin lacus, at convallis mauris magna non justo. Etiam et suscipit elit. Morbi eu ornare nulla, sit amet ornare est. Sed vehicula ipsum a mattis dapibus. Etiam volutpat vel enim at auctor.
+      <p>Aenean pharetra convallis pellentesque. Vestibulum et metus lectus. Nunc consectetur, ipsum in viverra eleifend, erat erat ultricies felis, at ultricies mi massa eu ligula. Suspendisse in justo dapibus metus sollicitudin ultrices id sed nisl. Aenean sem risus, auctor in sodales vehicula, commodo et nulla. Aenean tincidunt pulvinar purus at cursus. Nunc sed justo vel velit fermentum dignissim eu eget enim. Vestibulum nulla diam, euismod eget mauris ut, euismod accumsan turpis. Aenean ultricies scelerisque quam, in sodales lectus condimentum eu. Suspendisse potenti. Donec sed volutpat lorem. Aliquam in lacus laoreet, malesuada purus eu, semper mauris. In nec libero semper, sagittis elit in, pellentesque est. Quisque orci velit, accumsan eu adipiscing eu, cursus non libero. Proin sed aliquam nibh. Mauris tincidunt urna at ultrices pharetra.
     </div>
-    <!-- item slide1 -->
 
-    <div class="item slide2">
-      <%= image_tag("home_background2.png", :class => "img-responsive home-slider-slide-two", :alt => "Get Enrolled") %>
-      <div class="carousel-caption">
-        <h3> Enabling therapists to provide more continuous care and improve outcomes. </h3>
+    <div id="footer">&copy; Coupal 2014</div>
 
-        <div><%= link_to "Learn More", '#promotion', :class => "btn btn-info btn-lg learn-more-button" %></div>
-      </div>
-      <!-- carousel-caption -->
-    </div>
-    <!-- item slide2 -->
-  </div>
-  <!-- carousel-inner -->
-</div> <!-- homeCarousel -->
-
-
-
-<a name="promotion"></a>
-<div class="promotions">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-4 left-margin">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="left-icon" style="width: 57px; height: 51px;">
-          <g transform="translate(-3,-5)">
-            <path d="M54.328734 24.739367c-2.739362 0,-4.960639 2.221277,-4.960639 4.960639c0 0.029787,0.008511 0.057447,0.008511 0.087234H35.786177c-0.2 -0.997873,-0.7 -1.885107,-1.401064 -2.569149L43.9032 14.361705c0.27766 0.047872,0.559575 0.08617,0.851064 0.08617c2.739362 0,4.960639 -2.221277,4.960639 -4.960639c0 -2.739362,-2.221277 -4.960639,-4.960639 -4.960639s-4.960639 2.221277,-4.960639 4.960639c0 1.664894,0.82766 3.130852,2.086171 4.029788l-9.317023 12.585109c-0.515958 -0.181915,-1.061702 -0.298936,-1.639362 -0.298936c-0.621277 0,-1.209575 0.12766,-1.757447 0.33617l-9.203193 -12.617024c1.262766 -0.898936,2.092554 -2.367022,2.092554 -4.035107c0 -2.739362,-2.221277 -4.960639,-4.960639 -4.960639s-4.960639 2.221277,-4.960639 4.960639c0 2.739362,2.221277 4.960639,4.960639 4.960639c0.290426 0,0.570213 -0.037234,0.846809 -0.085106l9.4383 12.9383c-0.657447 0.672341,-1.126596 1.52766,-1.318085 2.486171H12.472343c0 -0.029787,0.008511 -0.057447,0.008511 -0.087234c0 -2.739362,-2.221277 -4.960639,-4.960639 -4.960639s-4.960639 2.221277,-4.960639 4.960639s2.221277 4.960639,4.960639 4.960639c1.939362 0,3.601065 -1.123404,4.417022 -2.745745h14.174471c0.188298 0.789362,0.569149 1.496809,1.084043 2.089362l-7.71915 11.582981c-0.709575 -0.392553,-1.51383 -0.635107,-2.382979 -0.635107c-2.739362 0,-4.960639 2.221277,-4.960639 4.960639s2.221277 4.960639,4.960639 4.960639s4.960639 -2.221277,4.960639 -4.960639c0 -1.092553,-0.36383 -2.093617,-0.962766 -2.912767l7.807448 -11.71596c0.619149 0.27766,1.302128 0.440426,2.024468 0.440426c0.560638 0,1.090426 -0.11383,1.593617 -0.285106l7.923406 12.067024c-0.4 0.715958,-0.647872 1.52766,-0.647872 2.406383c0 2.739362,2.221277 4.960639,4.960639 4.960639s4.960639 -2.221277,4.960639 -4.960639s-2.221277 -4.960639,-4.960639 -4.960639c-1.061702 0,-2.040426 0.340426,-2.847873 0.908511l-7.561704 -11.517024c0.678724 -0.647872,1.168085 -1.485107,1.392553 -2.428724h14.174471c0.815958 1.622341,2.47766 2.745745,4.417022 2.745745c2.739362 0,4.960639 -2.221277,4.960639 -4.960639S57.068097 24.739367,54.328734 24.739367zM44.754264 6.654257c1.561702 0,2.832979 1.271277,2.832979 2.832979c0 1.561702,-1.271277 2.832979,-2.832979 2.832979c-1.561702 0,-2.832979 -1.271277,-2.832979 -2.832979C41.921285 7.925534,43.192562 6.654257,44.754264 6.654257zM17.094684 12.320215c-1.561702 0,-2.832979 -1.271277,-2.832979 -2.832979c0 -1.561702,1.271277 -2.832979,2.832979 -2.832979c1.561702 0,2.832979 1.271277,2.832979 2.832979C19.927664 11.050002,18.656387 12.320215,17.094684 12.320215zM7.520214 32.532985c-1.561702 0,-2.832979 -1.271277,-2.832979 -2.832979c0 -1.561702,1.271277 -2.832979,2.832979 -2.832979c1.561702 0,2.832979 1.271277,2.832979 2.832979C10.353194 31.262772,9.081917 32.532985,7.520214 32.532985zM17.094684 52.745755c-1.561702 0,-2.832979 -1.271277,-2.832979 -2.832979c0 -1.561702,1.271277 -2.832979,2.832979 -2.832979c1.561702 0,2.832979 1.271277,2.832979 2.832979C19.927664 51.475542,18.656387 52.745755,17.094684 52.745755zM44.754264 47.079797c1.561702 0,2.832979 1.271277,2.832979 2.832979c0 1.561702,-1.271277 2.832979,-2.832979 2.832979c-1.561702 0,-2.832979 -1.271277,-2.832979 -2.832979C41.921285 48.351074,43.192562 47.079797,44.754264 47.079797zM30.924474 33.596815c-1.561702 0,-2.832979 -1.271277,-2.832979 -2.832979c0 -1.561702,1.271277 -2.832979,2.832979 -2.832979c1.561702 0,2.832979 1.271277,2.832979 2.832979C33.757454 32.326602,32.486177 33.596815,30.924474 33.596815zM54.328734 32.532985c-1.561702 0,-2.832979 -1.271277,-2.832979 -2.832979c0 -1.561702,1.271277 -2.832979,2.832979 -2.832979c1.561702 0,2.832979 1.271277,2.832979 2.832979C57.161714 31.262772,55.890437 32.532985,54.328734 32.532985z"></path>
-          </g>
-        </svg>
-
-        <h4>FOR PATIENTS</h4>
-        Take charge of your recovery by working with personalized video plans, tracking your progress, and connecting
-        with other recovering patients.
-      </div>
-
-
-      <div class="col-md-4 left-margin">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="left-icon" style="width: 51px; height: 42px;">
-          <g transform="translate(-5,-7)">
-            <path d="M7.140627 32.223969l10.828128 -7.331252c0.864584 0.795834,2.009376 1.292709,3.277084 1.292709c1.095834 0,2.095834 -0.376042,2.908334 -0.988542l5.19896 4.726043c-0.673959 0.834375,-1.094792 1.881251,-1.094792 3.036459c0 2.682293,2.175001 4.857293,4.857293 4.857293s4.857293 -2.175001,4.857293 -4.857293c0 -1.292709,-0.513542 -2.460417,-1.3375 -3.330209l10.844795 -12.776046c0.719792 0.420833,1.545834 0.679167,2.439584 0.679167c2.682293 0,4.857293 -2.175001,4.857293 -4.857293s-2.175001 -4.857293,-4.857293 -4.857293s-4.857293 2.175001,-4.857293 4.857293c0 1.035417,0.329167 1.990626,0.882292 2.779168L34.970845 28.472926c-0.571875 -0.236458,-1.196875 -0.370833,-1.854167 -0.370833c-0.761459 0,-1.472917 0.190625,-2.114584 0.503125l-5.493752 -4.993752c0.366667 -0.683334,0.594792 -1.453125,0.594792 -2.283334c0 -2.682293,-2.175001 -4.857293,-4.857293 -4.857293s-4.857293 2.175001,-4.857293 4.857293c0 0.661459,0.134375 1.290625,0.373958 1.864584l-9.621878 6.514585V6.770836h-2.083334v41.66668h48.958349v-2.083334h-46.875015V32.223969zM49.920849 9.978128c1.489584 0,2.696876 1.207292,2.696876 2.696876c0 1.489584,-1.207292 2.696876,-2.696876 2.696876s-2.696876 -1.207292,-2.696876 -2.696876C47.223973 11.18542,48.431265 9.978128,49.920849 9.978128zM33.116677 30.26251c1.489584 0,2.696876 1.207292,2.696876 2.696876c0 1.489584,-1.207292 2.696876,-2.696876 2.696876c-1.489584 0,-2.696876 -1.207292,-2.696876 -2.696876C30.419801 31.469802,31.627093 30.26251,33.116677 30.26251zM21.24584 18.631256c1.489584 0,2.696876 1.207292,2.696876 2.696876c0 1.489584,-1.207292 2.696876,-2.696876 2.696876s-2.696876 -1.207292,-2.696876 -2.696876C18.548964 19.838548,19.756256 18.631256,21.24584 18.631256z"></path>
-          </g>
-        </svg>
-
-        <h4>FOR PROVIDERS</h4>
-        Improve patient outcomes by using our intuitive online platform to monitor your patients remotely and motivate
-        them to succeed.
-      </div>
-    </div>
-    <!-- row div -->
-
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-4 left-margin">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="left-icon" style="width: 56px; height: 50px;">
-          <g transform="translate(-4,-3)">
-            <path d="M51.722217 50.55555c-0.001111 -0.031111,0.005556 -0.062222,0.002222 -0.093333l-1.257778 -13.458888l-0.665555 -0.76C32.40333 13.683332,32.288886 13.888888,31.544441 13.888888h-0.407778l-0.31 0.055556c-0.442222 0.371111,-6.75111 4.878888,-10.883332 7.956666l-0.902222 0.671111L37.766663 47.099995l9.532221 3.455555H4.491111v2.222222h55.55555v-2.222222H51.722217zM22.17222 23.011109c2.151111 -1.602222,7.188888 -5.358888,9.233332 -6.912222c2.274444 2.756666,10.236666 13.003332,15.97111 20.433331l-9.224444 7.408888L22.17222 23.011109zM39.909996 45.395551l8.355555 -6.643333l1.062222 10.157777L39.909996 45.395551z"></path>
-            <path d="M17.357776 20.825553l13.077776 -9.468888l-0.714444 -0.908889c-0.162222 -0.205556,-3.97 -5.047777,-5.054444 -6.296666c-1.004444 -1.156667,-2.181111 -1.4,-2.99 -1.4c-0.674444 0,-1.158889 0.17,-1.248889 0.204444L20.255554 3.037777c-0.146667 0.085556,-3.608889 2.131111,-6.263333 4.432222c-2.062222 1.787778,-2.377778 2.905555,-2.407778 3.747777c-0.364444 1.763333,2.575555 5.764444,5.107777 8.808888L17.357776 20.825553zM13.797776 11.329999c0.007778 -0.192222,0.033333 -0.78,1.65 -2.18c2.241111 -1.942222,5.208888 -3.76,5.821111 -4.128888c0.082222 -0.02,0.227778 -0.046667,0.405556 -0.046667c0.512222 0,0.942222 0.207778,1.313333 0.634444c0.772222 0.888889,3.084444 3.804444,4.27 5.304444l-9.512221 6.886666c-2.008889 -2.515555,-3.955555 -5.393333,-3.983333 -6.133333C13.78111 11.574443,13.792221 11.463332,13.797776 11.329999z"></path>
-            <path d="M27.444442 23.867775c-0.144444 -0.191111,-0.493333 -0.17,-0.778889 0.045556l-0.517778 0.392222c-0.285556 0.216667,-0.401111 0.546667,-0.256667 0.737778l10.577777 14.014443c0.144444 0.191111,0.493333 0.17,0.778889 -0.045556l0.517778 -0.392222c0.285556 -0.216667,0.4 -0.546667,0.255556 -0.737778L27.444442 23.867775z"></path>
-          </g>
-        </svg>
-        <h4>FOR CLINIC MANAGERS</h4>
-        Increase retention rates and therefore your bottom line through our easy-to-use platform that integrates with
-        your existing software system.
-      </div>
-      <!-- col-md-4 -->
-
-      <div class="col-md-4 left-margin">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="left-icon" style="width: 56px; height: 50px;">
-          <g transform="translate(-4,-3)">
-            <path d="M51.722217 50.55555c-0.001111 -0.031111,0.005556 -0.062222,0.002222 -0.093333l-1.257778 -13.458888l-0.665555 -0.76C32.40333 13.683332,32.288886 13.888888,31.544441 13.888888h-0.407778l-0.31 0.055556c-0.442222 0.371111,-6.75111 4.878888,-10.883332 7.956666l-0.902222 0.671111L37.766663 47.099995l9.532221 3.455555H4.491111v2.222222h55.55555v-2.222222H51.722217zM22.17222 23.011109c2.151111 -1.602222,7.188888 -5.358888,9.233332 -6.912222c2.274444 2.756666,10.236666 13.003332,15.97111 20.433331l-9.224444 7.408888L22.17222 23.011109zM39.909996 45.395551l8.355555 -6.643333l1.062222 10.157777L39.909996 45.395551z"></path>
-            <path d="M17.357776 20.825553l13.077776 -9.468888l-0.714444 -0.908889c-0.162222 -0.205556,-3.97 -5.047777,-5.054444 -6.296666c-1.004444 -1.156667,-2.181111 -1.4,-2.99 -1.4c-0.674444 0,-1.158889 0.17,-1.248889 0.204444L20.255554 3.037777c-0.146667 0.085556,-3.608889 2.131111,-6.263333 4.432222c-2.062222 1.787778,-2.377778 2.905555,-2.407778 3.747777c-0.364444 1.763333,2.575555 5.764444,5.107777 8.808888L17.357776 20.825553zM13.797776 11.329999c0.007778 -0.192222,0.033333 -0.78,1.65 -2.18c2.241111 -1.942222,5.208888 -3.76,5.821111 -4.128888c0.082222 -0.02,0.227778 -0.046667,0.405556 -0.046667c0.512222 0,0.942222 0.207778,1.313333 0.634444c0.772222 0.888889,3.084444 3.804444,4.27 5.304444l-9.512221 6.886666c-2.008889 -2.515555,-3.955555 -5.393333,-3.983333 -6.133333C13.78111 11.574443,13.792221 11.463332,13.797776 11.329999z"></path>
-            <path d="M27.444442 23.867775c-0.144444 -0.191111,-0.493333 -0.17,-0.778889 0.045556l-0.517778 0.392222c-0.285556 0.216667,-0.401111 0.546667,-0.256667 0.737778l10.577777 14.014443c0.144444 0.191111,0.493333 0.17,0.778889 -0.045556l0.517778 -0.392222c0.285556 -0.216667,0.4 -0.546667,0.255556 -0.737778L27.444442 23.867775z"></path>
-          </g>
-        </svg>
-        <h4>FOR PAYERS</h4>
-        Avoid costly revision surgeries by drastically improving your covered population's chance and speed of recovery.
-      </div>
-      <!-- col-md4 -->
-    </div>
-    <!-- row div -->
-  </div>
-  <!-- container -->
-</div> <!-- promotions -->
-
-<!-- anchor link -->
-<a name="product"></a>
-<div class="product">
-  <div class="product-inner">
-    <%= image_tag("tablet.png", :class => "img-responsive product-tablet", :alt => "Footsteps tablet") %>
-    <%= image_tag("phone.png", :class => "img-responsive product-phone", :alt => "Footsteps phone") %>
-    <%= image_tag("product_wireframe.png", :class => "img-responsive product-wireframe", :alt => "product wireframe") %>
-
-
-    <div class="product-info">
-      <h3>Reach your activity<br/> goals faster. <br/>On any device.</h3>
-      Whether you're a patient, provider, or payer, progress is only a footstep away.
-      <br/>Access Footsteps anytime, anywhere.
-    </div>
-    <!-- product-info -->
-
-    <%= link_to "Get on the list", '#signup', :class => "btn btn-info btn-lg product-signup-button smoothScroll" %>
-  </div>
-  <!-- product-inner -->
-</div> <!-- product -->
-
-
-<a name="social"></a>
-<div class="social">
-  <div class="container">
-    <div class="social-info"><h3>FOLLOW US</h3></div>
-    <div class="row">
-      <div class="col-md-4">
-        <a href="https://www.facebook.com/Footsteplabs" target="_blank"><%= image_tag('facebook.png', :class => "social-icon") %></a>
-      </div>
-      <div class="col-md-4">
-        <a href="https://twitter.com/footsteplabs" target="_blank"><%= image_tag('twitter.png', :class => "social-icon") %></a>
-      </div>
-      <div class="col-md-4">
-        <a href="https://www.linkedin.com/company/5255672?trk=tyah&trkInfo=tarId%3A1405464248770%2Ctas%3Afootstep%20labs%2Cidx%3A1-1-1" target="_blank"><%= image_tag('linkedin.png', :class => "social-icon") %></a>
-      </div>
-    </div>
-    <!-- row -->
-  </div>
-  <!-- container -->
-</div> <!-- social -->
-
-
-<a name="signup"></a>
-<div class="signup">
-  <div class="signup-inner">
-
-    <h3>We’re not quite ready for you! Please sign up to receive product updates.</h3>
-
-    <div class="foot"><%= image_tag("foot.png") %></div>
-
-    <%= form_for :user, url: users_path do |f| %>
-        <div class="form-group"><%= f.text_field :first_name, :placeholder => "First Name*", :required => true, :class => "form-control" %></div>
-        <div class="form-group"><%= f.text_field :last_name, :placeholder => "Last Name*", :required => true, :class => "form-control" %></div>
-        <div class="form-group"><%= f.email_field :email, :placeholder => "Email*", :required => true, :class => "form-control" %></div>
-        <div class="form-group"><%= f.text_field :company, :placeholder => "Company", :class => "form-control" %></div>
-        <div class="form-group"><%= f.text_area :signup_msg, :placeholder => "Message", :class => "form-control", :style => "height: 5em" %></div>
-        <div class="form-group"><%= f.submit "Sign up", :class => "btn btn-primary pull-right" %></div>
-    <% end %>
-
-    <%= bootstrap_flash %>
-  </div>
-  <!-- signup-inner -->
-
-  <div class="contact">
-    <h4>CONTACT US:</h4>
-
-    <p>info@footsteplabs.com</p>
-
-    <p>T: (914) 261-3294</p>
-  </div>
-
-
-</div> <!-- signup -->
-
-<script type="text/javascript">
-    $("#nav-home").addClass("active");
-    $("#nav-exercise").removeClass("active");
-    $("#nav-patient").removeClass("active");
-    $("#nav-help").removeClass("active");
-    $("#nav-login").removeClass("active");
-    $("#nav-signup").removeClass("active");
-
-
-    //For smooth scroll
-    $(function () {
-        $('a[href*=#]:not([href=#])').click(function () {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 800);
-                    return false;
-                }
-            }
-        });
-    });
-</script>
-    <div id="yield-content-wrapper"><%= yield %></div>
-    <div id="footer">&copy; Footstep Labs, Inc 2014</div>
-</body>
-  <%= yield :javascript_includes %>
+    <script>
+    var video = document.getElementById("bgvideo");
+    video.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      video.play();
+    }
+    </script>
+  </body>
 </html>

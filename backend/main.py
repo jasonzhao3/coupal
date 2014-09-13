@@ -12,51 +12,66 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import webapp2
-import os
-from webapp2_extras import jinja2
 
-from apiclient.discovery import build
-from oauth2client.appengine import OAuth2DecoratorFromClientSecrets
+from flask import Flask
+webapp = Flask(__name__)
 
-JINJA_ENVIRONMENT = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
-    extensions=['jinja2.ext.autoescape'],
-    autoescape=True)
+@webapp.route('/')
+def hello_world():
+    return 'Hello World!'
 
-decorator = OAuth2DecoratorFromClientSecrets(
-    os.path.join(os.path.dirname(__file__), 'client_secrets.json'),
-    scope='https://www.googleapis.com/auth/plus')
-
-service = build('tasks', 'v1')
+if __name__ == '__main__':
+    webapp.debug = True
+    webapp.run()
 
 
-class MainHandler(webapp2.RequestHandler):
-
-  def render_response(self, template, **context):
-    renderer = jinja2.get_jinja2(app=self.app)
-    rendered_value = renderer.render_template(template, **context)
-    self.response.write(rendered_value)
-
-  @decorator.oauth_aware
-  def get(self):
-    if decorator.has_credentials():
-      result = service.tasks().list(tasklist='@default').execute(
-          http=decorator.http())
-      tasks = result.get('items', [])
-      for task in tasks:
-        task['title_short'] = truncate(task['title'], 26)
-      self.render_response('index.html', tasks=tasks)
-    else:
-      url = decorator.authorize_url()
-      self.render_response('index.html', tasks=[], authorize_url=url)
 
 
-def truncate(s, l):
-  return s[:l] + '...' if len(s) > l else s
+# import webapp2
+# import os
+# from webapp2_extras import jinja2
+
+# from apiclient.discovery import build
+# from oauth2client.appengine import OAuth2DecoratorFromClientSecrets
+
+# JINJA_ENVIRONMENT = jinja2.Environment(
+#     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+#     extensions=['jinja2.ext.autoescape'],
+#     autoescape=True)
+
+# decorator = OAuth2DecoratorFromClientSecrets(
+#     os.path.join(os.path.dirname(__file__), 'client_secrets.json'),
+#     scope='https://www.googleapis.com/auth/plus')
+
+# service = build('tasks', 'v1')
 
 
-application = webapp2.WSGIApplication([
-    ('/', MainHandler),
-    (decorator.callback_path, decorator.callback_handler()),
-    ], debug=True)
+# class MainHandler(webapp2.RequestHandler):
+
+#   def render_response(self, template, **context):
+#     renderer = jinja2.get_jinja2(app=self.app)
+#     rendered_value = renderer.render_template(template, **context)
+#     self.response.write(rendered_value)
+
+#   @decorator.oauth_aware
+#   def get(self):
+#     if decorator.has_credentials():
+#       result = service.tasks().list(tasklist='@default').execute(
+#           http=decorator.http())
+#       tasks = result.get('items', [])
+#       for task in tasks:
+#         task['title_short'] = truncate(task['title'], 26)
+#       self.render_response('index.html', tasks=tasks)
+#     else:
+#       url = decorator.authorize_url()
+#       self.render_response('index.html', tasks=[], authorize_url=url)
+
+
+# def truncate(s, l):
+#   return s[:l] + '...' if len(s) > l else s
+
+
+# application = webapp2.WSGIApplication([
+#     ('/', MainHandler),
+#     (decorator.callback_path, decorator.callback_handler()),
+#     ], debug=True)

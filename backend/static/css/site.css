@@ -1,0 +1,117 @@
+/* line 1, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* line 5, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+body, dd, div, dt, li, p, span, td {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #424242;
+  line-height: 1.428571429;
+}
+
+/* line 14, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+.navbar-default {
+  background-color: rgba(255, 255, 255, 0) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 21, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+.main-menu.clear {
+  top: 0 !important;
+  background: rgba(255, 255, 255, 0.97) !important;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  transition: all .7s ease;
+  -webkit-transition: all .7s ease;
+}
+
+/* line 31, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+.navbar-brand {
+  padding: 0 !important;
+  display: block;
+  width: 175px;
+  height: 45px;
+  background: url("/assets/logo.png") no-repeat left top;
+  background-size: contain;
+  background-position: left bottom;
+}
+
+/* line 41, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+li, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 46, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+.navbar-nav li a {
+  font-family: "Roboto Condensed";
+  color: #fff;
+  font-size: 15px;
+  padding: 0 !important;
+  margin-top: 12px;
+  margin-right: 40px;
+  line-height: 26px;
+  text-transform: uppercase;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 61, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+.navbar-nav li a:hover {
+  color: #09a440 !important;
+  background-color: transparent !important;
+  border-bottom: 3px solid #09a440;
+}
+
+/* line 67, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+.navbar-nav li.active a {
+  color: #09a440 !important;
+  background-color: transparent !important;
+  border-bottom: 3px solid #09a440;
+}
+
+/* line 74, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+.yield-content-wrapper {
+  margin-top: 90px;
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow: auto;
+}
+
+/* line 81, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+.center-div {
+  text-align: center;
+}
+
+/* line 85, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+.page-center-header {
+  margin-bottom: 3px;
+}
+
+/* line 89, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+.add_button > img {
+  position: fixed;
+  width: 72px;
+  height: 72px;
+  left: 92%;
+  top: 80%;
+  cursor: pointer;
+}
+
+/* line 98, /home/ubuntu/footsteplabs/app/assets/stylesheets/sites.css.scss */
+.calendar_button > img {
+  position: fixed;
+  width: 72px;
+  height: 90px;
+  left: 92%;
+  top: 65%;
+  cursor: pointer;
+}
