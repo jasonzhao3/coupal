@@ -3,3 +3,4 @@ android-sdk-macosx/
 backend/env/
 backend/static/videos/
 *.pyc
+backend/secret/
