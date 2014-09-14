@@ -1,4 +1,7 @@
 android-sdk-macosx/
 .DS_Store
 backend/env/
-backend/static/videos/
+backend/application/static/videos/
+backend/
+*.pyc
+secret/
