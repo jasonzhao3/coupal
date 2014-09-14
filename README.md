@@ -1,6 +1,6 @@
 Coupal
 ======
-[Official Coupal Website](http://coupal-co-2014.appspot.com/)
+[Official Coupal Website](http://coupal.co/)
 
 This repo contains server and web code
 Mobile code will be in another repo
