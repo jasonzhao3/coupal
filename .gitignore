@@ -5,3 +5,4 @@ backend/static/videos/
 *.pyc
 backend/secret/
 backend/lib/gmail/*.json
+*.un~
