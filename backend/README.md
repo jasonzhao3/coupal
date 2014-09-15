@@ -3,6 +3,9 @@
 A skeleton for building Python applications on Google App Engine with the
 [Flask micro framework](http://flask.pocoo.org).
 
+## Copy secret files
+Copy ```local_client_secret.json``` and ```gae_client_secret.json``` into ```lib/gmail```. The two json files are shared in dropbox secret folder.
+
 ## Run Locally
 1. Install the [App Engine Python SDK](https://developers.google.com/appengine/downloads).
 See the README file for directions. You'll need python 2.7 and [pip 1.4 or later](http://www.pip-installer.org/en/latest/installing.html) installed too.
