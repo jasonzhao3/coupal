@@ -33,7 +33,6 @@ google = oauth.remote_app(
   authorize_url='https://accounts.google.com/o/oauth2/auth',
 )
 
-
 @app.route('/')
 def index():
   """Return a our landing page."""
@@ -51,7 +50,6 @@ def me():
     return jsonify({"data": me.data})
   return redirect(url_for('login'))
 
-
 @app.route('/mail')
 def mail():
   ''' Builds a GMAIL API query for macy's emails in the last 6 months.
@@ -66,7 +64,6 @@ def mail():
     return render_template('mail.html', messages=messages)
   return redirect(url_for('login'))
 
-
 def get_message_body(messages):
   bodies = []
   url = "https://www.googleapis.com/gmail/v1/users/%s/messages/" % session.get('user_email')
@@ -75,7 +72,6 @@ def get_message_body(messages):
     mail = google.get(curr_url)
     bodies.append(base64.urlsafe_b64decode(mail.data['payload']['body']['data'].encode('ASCII')))
   return bodies
-
 
 '''
   OAuth2 flow:
